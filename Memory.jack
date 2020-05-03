@@ -1,0 +1,39 @@
+// Jack OS Memory class (basic version)
+// heap resides at RAM 2048 - 16383
+class Memory {
+    static int free;
+
+    function void init() {
+        let free = 2048;    // heap base;
+        return;
+    }
+
+    function int peek(int address) {
+        // returns value of main memory at this address
+        var Array memory;
+        let memory = 0;
+        return memory[address];
+    }
+
+    function void poke(int address, int value) {
+        // sets contents of main memory at this address to value
+        var Array memory;
+        let memory = 0;
+        let memory[address] = value;
+        return; 
+    }
+
+    function Array alloc(int size) {
+        // finds and allocates from the heap a memory block of the specified size
+        // returns a reference to its base address
+        var Array pointer;
+        let pointer = free;
+        let free = free + size;
+        return pointer;
+    }
+
+    function void deAlloc(Array o) {
+        // de-allocates the given object and frees its memory
+        return;
+    }
+}

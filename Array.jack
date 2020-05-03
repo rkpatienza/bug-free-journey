@@ -1,0 +1,13 @@
+// Jack OS Array class
+
+class Array {
+    function Array new(int size) {
+        // constructs a new array of the given size (use Memory?)
+        return Memory.alloc(size);
+    }
+
+    method void dispose() {
+        // disposes this array
+        return;
+    }
+}
